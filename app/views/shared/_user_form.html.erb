@@ -1,0 +1,15 @@
+<%= render 'shared/errors' %>
+
+<form id="login/signup" action=<%= url %> method="POST">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <label for="user_name">Username: </label>
+  <input type="text" id="user_name" name="user[user_name]">
+  <br/>
+  <label for="password">Password: </label>
+  <input type="text" id="password" name="user[password]">
+  <br/>
+  <input type="Submit" value="<%= url.match(/session/) ? 'Log in!' : 'Sign up!' %>">
+</form>
